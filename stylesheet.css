@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    position: relative;
+    width: auto;
+    margin: auto;
+    max-width: 1200px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+#wrapper1 {
+    position: relative;
+    width: auto;
+    margin: auto;
+    max-width: 800px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+#icon {
+    margin: 15%;
+    margin-top: 90%;
+    padding-left: 9%;
+
+}
+
+a:link, a:visited {
+    color: black;
+    padding: 14px 0px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: .8em;
+}
+
+a:hover, a:active {
+    color: grey;
+}
+
+#bodyblock {
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    height: 100%;
+    padding-top: 6%;
+    z-index: 2;
+}
+
+#bodyblock1 {
+    width: 50%;
+    height: 100%;
+}
+
+#projectblock {
+    z-index: 3;
+}
+
+#workimage {
+    width: 100%;
+}
+
+#imagehalf {
+    width: 50%;
+    float: left;
+}
+
+#imagevert {
+    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    float: left;
+}
+
+#imagevert1 {
+    width: 40%;
+    padding-top: 8.8%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#imagevert2 {
+    width: 20%;
+    float: left;
+}
+
+#imagethird {
+    width: 33.333333%;
+    float: left;
+}
+
+#iconimage {
+    width: 18%;
+}
+
+#logotext {
+    margin: 0%;
+    width: 100%;
+}
+
+#logotexth {
+    margin: 5%;
+    width: 90%;
+}
+
+#squaresingle {
+    margin: 0%;
+    width: 80%;
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#halfpic {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 95%;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2%;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.6em; 
+}
+
+h2 {
+        margin-top: 1%;
+        margin-bottom: 3%;
+        font-size: .8em;  
+        font-weight: 600;
+        text-align: center;
+}
+
+h3 {
+        margin-bottom: 2%;
+        font-size: .8em;
+        font-weight: 600;
+        text-align: center;
+}
+
+p {
+    margin-bottom: 5%;
+    font-size: .8em;
+    font-weight: 400;
+    max-width: 420px;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+
+#fullbar {
+    margin-top:4%;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+#halfie {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+#textbox {
+    width: 69%;
+    height: 100%;
+    float: left;
+}
+
+#onethird {
+    width: 33.333%;
+    height: 100%;
+    float: left;
+}
+
+#onethird3 {
+    width: 15%;
+    height: 100%;
+    float: left;
+}
+
+#twothird {
+    width: 66.66666667%;
+    height: 100%;
+    float: left;
+}
+
+#twothird1 {
+    margin: 5%;
+    width: 66.66666667%;
+    height: 100%;
+    float: left;
+}
+
+#blackbar {
+    height: 2px;
+    width: 111px;
+    background-color: black;
+}
+
+#blackbar1 {
+    height: 2px;
+    width: 50px;
+    background-color: black;
+}
+
+#blackbar2 {
+    height: 2px;
+    margin-top: 2%;
+    width: 50px;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  z-index: 3;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+    z-index: 3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+  z-index: 3;
+}
+
+.text {
+    color: black;
+    font-size: 1.5em;
+}
+
+
+
+nav {
+    width: 100%;
+    height: 5%;
+    position: sticky;  top: 0; 
+    align-content: center;
+    z-index: 1;
+    
+}
+
+nav ul {
+    display: block;
+    align-items: baseline;
+    z-index: 1;
+    align-content: center;
+    text-align: center;
+    
+}
+
+nav ul li {
+    display: block;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    z-index: 1; 
+    
+}
+
+nav ul li a {
+    display: block;
+    color: antiquewhite;
+    font-weight: bold;
+    line-height: 4%;
+    z-index: 1;
+    align-content: center;
+    text-align: center;
+}
+
+nav ul li a.active {
+    background: white;
+    width: 120px;
+    opacity: 80%;
+    z-index: 1;
+    align-content: center;
+    text-align: center;
+}
+
+
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
