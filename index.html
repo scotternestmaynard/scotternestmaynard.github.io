@@ -473,30 +473,6 @@
                 });
             });
             
-            // Add animation when scrolling
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            function checkScroll() {
-                projectCards.forEach(card => {
-                    const cardTop = card.getBoundingClientRect().top;
-                    if (cardTop < window.innerHeight - 100) {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }
-                });
-            }
-            
-            // Set initial state for animation
-            projectCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            });
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkScroll);
-            // Check on load
-            checkScroll();
         });
     </script>
 </body>
