@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scott's Portfolio | Home</title>
+    
+    <!-- Modern Swiss Editorial Typography: Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
         /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
         
         body {
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #fafafa;
+            color: #111111;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
         
-        /* Header styles */
+        /* Sticky Header with Distinct Dark Separation Line */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: rgba(250, 250, 250, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1.5px solid #111111;
             position: fixed;
             width: 100%;
             top: 0;
@@ -32,44 +41,51 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 28px;
         }
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            height: 76px;
         }
         
+        /* Header Logo using Space Grotesk */
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
             text-decoration: none;
-            color: #333;
+            color: #111111;
+            text-transform: uppercase;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            text-decoration: none;
+            gap: 16px;
+            align-items: center;
         }
         
-        .nav-links li {
-            margin-left: 30px;
-            text-decoration: none;
-        }
-        
+        /* Contact link with blocky source font and enlarged invisible surrounding hitbox */
         .nav-links a {
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #333333;
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            border-radius: 4px;
+            transition: color 0.2s ease, background-color 0.2s ease;
         }
         
         .nav-links a:hover {
-            color: #0066ff;
-            text-decoration: none;
+            color: #000000;
+            background-color: rgba(0, 0, 0, 0.04);
         }
         
         /* Mobile menu styles */
@@ -79,7 +95,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #333;
+            color: #111111;
             z-index: 1001;
         }
         
@@ -90,9 +106,9 @@
             width: 300px;
             height: 100vh;
             background-color: white;
-            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
             z-index: 1000;
-            transition: right 0.3s ease;
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             padding: 80px 30px 30px;
         }
         
@@ -105,18 +121,20 @@
         }
         
         .mobile-nav-links li {
-            margin-bottom: 20px;
-            margin-left: 20px;
+            margin-bottom: 24px;
         }
         
         .mobile-nav-links a {
             text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #111111;
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
             display: block;
-            padding: 10px 0;
+            padding: 8px 0;
         }
         
         .mobile-nav-links a:hover {
@@ -125,13 +143,13 @@
         
         .mobile-menu-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 24px;
+            right: 24px;
             background: none;
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #333;
+            color: #111111;
         }
         
         .mobile-menu-overlay {
@@ -140,7 +158,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -152,53 +171,65 @@
             visibility: visible;
         }
         
-        /* Hero section */
-        .hero {
-            padding: 150px 0 40px;
-            padding-bottom: 0px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        
-        /* Portfolio grid */
+        /* Portfolio section - Matched 110px top padding to 3dt hero */
         .portfolio {
-            padding: 40px 0 80px;
+            padding: 110px 0 80px;
+            background-color: #fafafa;
         }
         
-        .section-title {
-            text-align: center;
+        /* Selected Works Header Block with matching light grey bottom border divider */
+        .portfolio-header {
             margin-bottom: 40px;
-            font-size: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
+        .portfolio-top-meta {
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666666;
+            margin-bottom: 1px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .portfolio-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #111111;
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-subtitle {
+            font-size: 12px;
+            color: #555555;
+            font-weight: 400;
+            max-width: 600px;
+            letter-spacing: -0.01em;
+        }
+        
+        /* 3 items per row layout */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
         
         .project-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
         }
         
         .project-img {
@@ -208,81 +239,85 @@
         }
         
         .project-info {
-            padding: 20px;
+            padding: 24px;
         }
         
         .project-info h3 {
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #111111;
         }
         
         .project-info p {
-            color: #666;
-            margin-bottom: 15px;
+            color: #555555;
+            margin-bottom: 10px;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
         }
         
         .view-project {
-            outline: 1px solid #b3b3b3;
-            display: inline-block;
-            padding: 4px 20px;
-            background-color: #ffffff;
-            color: #333;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #111111;
             text-decoration: none;
-            border-radius: 88px;
-            font-weight: 500;
-            transition: background-color 0.3s;
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
         
-        .view-project:hover {
-            background-color: #d3f600;
+        .view-project span {
+            transition: transform 0.2s ease;
+        }
+        
+        .project-card:hover .view-project {
+            color: #0066ff;
+        }
+
+        .project-card:hover .view-project span {
+            transform: translateX(4px);
         }
         
         /* Footer */
         footer {
-            background-color: #d3f600;
+            background-color: #111111;
             color: white;
             padding: 40px 0;
             text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .social-links li {
-            margin: 0 10px;
-        }
-        
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: #0066ff;
-            text-decoration: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         .copyright {
-            font-size: 14px;
-            color: #272727;
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 10px;
+            color: #888888;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .copyright a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .copyright a:hover {
+            color: #d3f600;
         }
         
         /* Mobile responsiveness */
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -296,10 +331,12 @@
             }
             
             .logo {
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #333;
+                font-size: 13px;
+                letter-spacing: 0.1em;
+            }
+            
+            .portfolio-title {
+                font-size: 32px;
             }
         }
     </style>
@@ -312,14 +349,14 @@
                 <ul class="nav-links">
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-btn">☰</button>
+                <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
             </nav>
         </div>
     </header>
     
     <!-- Mobile menu -->
     <div class="mobile-menu">
-        <button class="mobile-menu-close">✕</button>
+        <button class="mobile-menu-close" aria-label="Close Menu">✕</button>
         <ul class="mobile-nav-links">
             <li><a href="index.html">The Work</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -328,16 +365,14 @@
     <div class="mobile-menu-overlay"></div>
     
     <main>
-         <!-- <section class="hero">
-            <div class="container">
-                <h1>Welcome 👋</h1>
-                <p>Hi, my name is Scott and I'm a design enthusiast.</p>
-            </div>
-        </section>
-         -->
-<br><br><br>
         <section class="portfolio">
             <div class="container">
+                <div class="portfolio-header">
+                    <div class="portfolio-top-meta">Portfolio &middot; Index</div>
+                    <h1 class="portfolio-title">Selected Works</h1>
+                    <p class="portfolio-subtitle">Branding, 3D Design, Animation, and Advertising</p>
+                </div>
+                
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card">
@@ -345,9 +380,9 @@
                         <div class="project-info">
                             <h3>3D Renders</h3>
                             <p>3D Modeling + Animation</p>
-                            <a href="3dt.html" class="view-project">View Project</a>
+                            <div class="view-project">View Project <span>→</span></div>
                         </div></a>
-                        </div>
+                    </div>
                     
                     <!-- Project 2 -->
                     <div class="project-card">
@@ -356,8 +391,8 @@
                         <div class="project-info">
                             <h3>FCorp Sales Sheets</h3>
                             <p>Layout Design + 3D Modeling</p>
-                            <a href="fcore.html" class="view-project">View Project</a>
-                            </div></a>
+                            <div class="view-project">View Project <span>→</span></div>
+                        </div></a>
                     </div>
                     
                     <!-- Project 3 -->
@@ -367,22 +402,10 @@
                         <div class="project-info">
                             <h3>Packaging Redesign</h3>
                             <p>A modern packaging solution for a classic product.</p>
-                            <a href="bowl.html" class="view-project">View Project</a>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- Project 4 -->
-                    <!-- <div class="project-card">
-                        <a href="star.html" style="text-decoration: none">
-                        <img src="/images/ssci.jpg" alt="Packaging Design" class="project-img">
-                        <div class="project-info">
-                            <h3>Game Design</h3>
-                            <p>Exploring the vastness of space.</p>
-                            <a href="star.html" class="view-project">See Project</a>
+                            <div class="view-project">View Project <span>→</span></div>
                         </div>
                         </a>
-                    </div> -->
+                    </div>
                     
                     <!-- Project 4 -->
                     <div class="project-card">
@@ -391,7 +414,7 @@
                         <div class="project-info">
                             <h3>Hasbro Ads</h3>
                             <p>Magic the Gathering marketing.</p>
-                            <a href="magic.html" class="view-project">View Project</a>
+                            <div class="view-project">View Project <span>→</span></div>
                         </div>
                         </a>
                     </div>
@@ -403,7 +426,7 @@
                         <div class="project-info">
                             <h3>AKAI</h3>
                             <p>MPK Mini.</p>
-                            <a href="MPK.html" class="view-project">View Project</a>
+                            <div class="view-project">View Project <span>→</span></div>
                         </div>
                         </a>
                     </div>
@@ -415,7 +438,7 @@
                         <div class="project-info">
                             <h3>LNYF 2018</h3>
                             <p>Lunar New Year 2018.</p>
-                            <a href="lnyf.html" class="view-project">View Project</a>
+                            <div class="view-project">View Project <span>→</span></div>
                         </div>
                         </a>
                     </div>
@@ -427,7 +450,10 @@
     
     <footer>
         <div class="container">
-            <p class="copyright">thescottmaynard@gmail.com <br> 425.837.2102</p>
+            <p class="copyright">
+                <a href="mailto:thescottmaynard@gmail.com">thescottmaynard@gmail.com</a><br>
+                425.837.2102
+            </p>
         </div>
     </footer>
 

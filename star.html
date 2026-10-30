@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Stranded | Scott's Portfolio</title>
+    <title>Scott Maynard | Portfolio</title>
+    
+    <!-- Modern Swiss Editorial Typography: Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset and base styles */
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
         
         body {
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #fafafa;
+            color: #111111;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
         
-        /* Header styles */
+        /* Sticky Header with Distinct Dark Separation Line */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: rgba(250, 250, 250, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1.5px solid #111111;
             position: fixed;
             width: 100%;
             top: 0;
@@ -32,51 +41,56 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 28px;
         }
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            height: 76px;
         }
         
+        /* Header Logo using Space Grotesk with editorial spacing */
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
             text-decoration: none;
-            color: #333;
+            color: #111111;
+            text-transform: uppercase;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
+            gap: 32px;
         }
         
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
+        /* Plain Contact Link Style */
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #333333;
+            font-family: 'Inter', sans-serif;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
         }
         
         .nav-links a:hover {
-            color: #0066ff;
+            color: #000000;
         }
         
-        /* Mobile menu styles */
+        /* Mobile Menu Styles */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #333;
+            color: #111111;
             z-index: 1001;
         }
         
@@ -87,9 +101,9 @@
             width: 300px;
             height: 100vh;
             background-color: white;
-            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
             z-index: 1000;
-            transition: right 0.3s ease;
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             padding: 80px 30px 30px;
         }
         
@@ -102,18 +116,18 @@
         }
         
         .mobile-nav-links li {
-            margin-bottom: 20px;
-            margin-left: 20px;
+            margin-bottom: 24px;
         }
         
         .mobile-nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #111111;
+            font-family: 'Inter', sans-serif;
             font-size: 18px;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            transition: color 0.2s ease;
             display: block;
-            padding: 10px 0;
         }
         
         .mobile-nav-links a:hover {
@@ -122,13 +136,13 @@
         
         .mobile-menu-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 24px;
+            right: 24px;
             background: none;
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #333;
+            color: #111111;
         }
         
         .mobile-menu-overlay {
@@ -137,7 +151,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -149,145 +164,194 @@
             visibility: visible;
         }
         
-        /* Project Hero */
-        .project-hero {
-            padding: 120px 0 50px;
-            padding-bottom: 1px;
-            background-color: #d3f600;
-            color: #272727;
+        /* Editorial Hero Section */
+        .hero {
+            padding: 160px 0 40px;
+            text-align: left;
         }
         
-        .project-title {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .project-meta {
-            display: flex;
-            margin-bottom: 30px;
-        }
-        
-        .project-meta div {
-            margin-right: 40px;
-        }
-        
-        .project-meta h4 {
-            font-size: 14px;
-            text-transform: uppercase;
-            color: #272727;
-            margin-bottom: 5px;
-        }
-        
-        .project-meta p {
-            font-size: 18px;
-        }
-        
-        /* Project Content */
-        .project-content {
-            margin-top: 60px;
-            margin-bottom: 10px;
-        }
-        
-        .project-description {
-            margin-bottom: 40px;
-        }
-        
-        .project-description h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        
-        .project-description p {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 20px;
-            max-width: 800px;
-        }
-        
-        .project-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .project-img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .next-prev {
+        .hero-inner {
             display: flex;
             justify-content: space-between;
-            padding: 40px 0;
+            align-items: flex-end;
+            border-bottom: 1.5px solid #111111;
+            padding-bottom: 32px;
         }
         
-        .prev-project, .next-project {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #111;
+            margin-bottom: 8px;
+        }
+        
+        .hero p {
+            font-size: 17px;
+            color: #555;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-tag {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #666;
+        }
+        
+        /* Portfolio Grid */
+        .portfolio {
+            padding: 60px 0 100px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
             display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+            border-color: rgba(0,0,0,0.2);
+        }
+        
+        .project-img-container {
+            overflow: hidden;
+            width: 100%;
+            height: 320px;
+            background-color: #f0f0f0;
+        }
+
+        .project-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.02);
+        }
+        
+        .project-info {
+            padding: 24px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .project-text h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            color: #111;
+        }
+        
+        .project-text p {
+            color: #666;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .view-project {
+            display: inline-flex;
             align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background-color: #f2f2f2;
+            color: #111;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
         }
         
-        .prev-project:hover, .next-project:hover {
-            color: #0066ff;
-        }
-        
-        .prev-project::before {
-            content: "←";
-            margin-right: 10px;
-        }
-        
-        .next-project::after {
-            content: "→";
-            margin-left: 10px;
+        .project-card:hover .view-project {
+            background-color: #111111;
+            color: #ffffff;
         }
         
         /* Footer */
         footer {
-            background-color: #272727;
+            background-color: #111111;
             color: white;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .social-links li {
-            margin: 0 10px;
-        }
-        
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: #0066ff;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         .copyright {
             font-size: 14px;
-            color: #aaa;
+            color: #888888;
+            line-height: 1.8;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .copyright a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .copyright a:hover {
+            color: #d3f600;
         }
         
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .project-title {
-                font-size: 36px;
+        /* Mobile responsiveness (Restored to 500px breakpoint) */
+        @media (max-width: 500px) {
+            .hero {
+                padding: 120px 0 20px;
+            }
+
+            .hero-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding-bottom: 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
             }
             
-            .project-images {
+            .hero p {
+                font-size: 15px;
+            }
+            
+            .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-img-container {
+                height: 240px;
+            }
+
+            .project-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                padding: 20px;
             }
             
             .nav-links {
@@ -298,69 +362,11 @@
                 display: block;
             }
             
-            .project-meta {
-                flex-direction: column;
-            }
-            
-            .project-meta div {
-                margin-bottom: 15px;
-            }
-            
             .logo {
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #333;
+                font-size: 13px;
+                letter-spacing: 0.1em;
             }
         }
-        
-        .image-container1 {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            gap: 20px;
-            margin: 0 auto;
-            max-width: 100%;
-        }
-        
-        .image-container1 img {
-            max-height: 500px;
-            width: auto;
-            object-fit: contain;
-            border-radius: 15px; /* This adds rounded corners to the images */
-        }
-        
-        /* Responsive adjustment for smaller screens */
-        @media (max-width: 768px) {
-            .image-container1 {
-                flex-direction: column;
-            }
-        }
-        
-        .image-container2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 0 auto;
-            max-width: 100%;
-        }
-        
-        .image-container2 img {
-            max-height: auto;
-            width: 100%;
-            object-fit: contain;
-            border-radius: 15px; /* This adds rounded corners to the images */
-            margin-bottom: 40px;
-        }
-        
-        /* Responsive adjustment for smaller screens */
-        @media (max-width: 768px) {
-            .image-container2 {
-                flex-direction: column;
-            }
-        }
-        
     </style>
 </head>
 <body>
@@ -369,81 +375,124 @@
             <nav>
                 <a href="index.html" class="logo">SCOTT MAYNARD</a>
                 <ul class="nav-links">
-                    <li><a href="index.html">The Work</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-btn">☰</button>
+                <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
             </nav>
         </div>
     </header>
     
     <!-- Mobile menu -->
     <div class="mobile-menu">
-        <button class="mobile-menu-close">✕</button>
+        <button class="mobile-menu-close" aria-label="Close Menu">✕</button>
         <ul class="mobile-nav-links">
             <li><a href="index.html">The Work</a></li>
             <li><a href="contact.html">Contact</a></li>
-
         </ul>
     </div>
     <div class="mobile-menu-overlay"></div>
     
     <main>
-        <section class="project-hero">
+        <section class="hero">
             <div class="container">
-                <h1 class="project-title">Tabletop Game Design</h1>
-                <div class="project-meta">
+                <div class="hero-inner">
                     <div>
-                        <h4>Roles</h4>
-                        <p>Design, Marketing</p>
+                        <h1>Selected Works</h1>
+                        <p>Branding, 3D Design, UI/UX, and Packaging Systems.</p>
                     </div>
-                    <div>
-                        <h4>Year</h4>
-                        <p>2024</p>
-                    </div>
+                    <div class="hero-tag">Portfolio 2026</div>
                 </div>
             </div>
         </section>
-        
-        <section class="project-content">
+
+        <section class="portfolio">
             <div class="container">
-                <div class="project-description">
-                    <h3>Star Stranded</h3>
-                    <p>Working on launching a physical product through the kickstarter pipeline. This project will allow me to learn more about business and industry. Setting up an overseas supplier and also working on a no budget marketing campaign.</p>
+                <div class="projects-grid">
                     
-                    <p>Will the project turn out to be a flop or will it recoup the time cost sunk into it? The world will find out this summer when I plan on launching a kickstarter to gauge audience reception.</p>
-                </div>
-                <div class="image-container2">
-                    <img src="images/SS1.jpg" alt="2econd Image Description">
-                </div>
-                
-                <div class="project-description">
-                    <h3>Individual Cards</h3>
-                    <p>A couple close ups on cards from different decks.</p>
-                </div>
-                
-                <div class="project-images">
-                    <img src="/images/SS10.jpg" alt="Logo Design" class="project-img">
-                    <img src="/images/SS7.jpg" alt="Color Palette" class="project-img">
-                    <img src="/images/SS8.jpg" alt="Typography" class="project-img">
-                    <img src="/images/SS9.jpg" alt="Packaging Design" class="project-img">
-                </div>
-                
-                <div class="project-description">
-                    <h3>Print Sheets</h3>
-                    <p>Over 140 unique double sided cards in this game which creates a lot of work.</p>
-                </div>
-                
-                <div class="project-images">
-                    <img src="/images/SS4.jpg" alt="Logo Design" class="project-img">
-                    <img src="/images/SS2.jpg" alt="Color Palette" class="project-img">
-                    <img src="/images/SS5.jpg" alt="Typography" class="project-img">
-                    <img src="/images/SS6.jpg" alt="Packaging Design" class="project-img">
-                </div>
-                
-                <div class="next-prev">
-                    <a href="bowl.html" class="prev-project">Previous Project</a>
-                    <a href="lnyf.html" class="next-project">Next Project</a>
+                    <!-- Project 1: 3D Renders -->
+                    <a href="3dt.html" class="project-card">
+                        <div class="project-img-container">
+                            <img src="/images/am.gif" alt="3D Renders Project" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-text">
+                                <h3>3D Renders</h3>
+                                <p>3D Modeling + Animation</p>
+                            </div>
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 2: FCorp Sales Sheets -->
+                    <a href="fcore.html" class="project-card">
+                        <div class="project-img-container">
+                            <img src="/images/d1.jpg" alt="FCorp Sales Sheets" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-text">
+                                <h3>FCorp Sales Sheets</h3>
+                                <p>Layout Design + 3D Modeling</p>
+                            </div>
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 3: Packaging Redesign -->
+                    <a href="bowl.html" class="project-card">
+                        <div class="project-img-container">
+                            <img src="/images/bowl1.jpg" alt="Packaging Redesign" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-text">
+                                <h3>Packaging Redesign</h3>
+                                <p>A modern packaging solution for a classic product.</p>
+                            </div>
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 4: Hasbro Ads -->
+                    <a href="magic.html" class="project-card">
+                        <div class="project-img-container">
+                            <img src="/images/magcov.jpg" alt="Hasbro Ads" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-text">
+                                <h3>Hasbro Ads</h3>
+                                <p>Magic the Gathering marketing.</p>
+                            </div>
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 5: AKAI -->
+                    <a href="MPK.html" class="project-card">
+                        <div class="project-img-container">
+                            <img src="/images/akani.gif" alt="AKAI MPK Mini" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-text">
+                                <h3>AKAI</h3>
+                                <p>MPK Mini.</p>
+                            </div>
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 6: LNYF 2018 -->
+                    <a href="lnyf.html" class="project-card">
+                        <div class="project-img-container">
+                            <img src="/images/p2.jpg" alt="LNYF 2018" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-text">
+                                <h3>LNYF 2018</h3>
+                                <p>Lunar New Year 2018.</p>
+                            </div>
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
         </section>
@@ -451,7 +500,10 @@
     
     <footer>
         <div class="container">
-            <p class="copyright">scotternestmaynard@gmail.com <br> 425.837.2102</p>
+            <p class="copyright">
+                <a href="mailto:thescottmaynard@gmail.com">thescottmaynard@gmail.com</a><br>
+                425.837.2102
+            </p>
         </div>
     </footer>
 
@@ -468,14 +520,14 @@
             mobileMenuBtn.addEventListener('click', function() {
                 mobileMenu.classList.add('active');
                 overlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                document.body.style.overflow = 'hidden';
             });
             
             // Close mobile menu
             function closeMenu() {
                 mobileMenu.classList.remove('active');
                 overlay.classList.remove('active');
-                document.body.style.overflow = ''; // Enable scrolling
+                document.body.style.overflow = '';
             }
             
             mobileMenuClose.addEventListener('click', closeMenu);
@@ -485,29 +537,6 @@
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', closeMenu);
             });
-            
-            // Fade in images on scroll
-            const projectImages = document.querySelectorAll('.project-img');
-            
-            function checkScroll() {
-                projectImages.forEach(img => {
-                    const imgTop = img.getBoundingClientRect().top;
-                    if (imgTop < window.innerHeight - 100) {
-                        img.style.opacity = '1';
-                    }
-                });
-            }
-            
-            // Set initial state
-            projectImages.forEach(img => {
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.8s ease';
-            });
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkScroll);
-            // Check on load
-            checkScroll();
         });
     </script>
 </body>
