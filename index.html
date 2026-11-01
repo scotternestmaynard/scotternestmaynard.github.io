@@ -26,12 +26,12 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Sticky Header with Distinct Dark Separation Line */
+        /* Sticky Header with Background-Matched Separation */
         header {
             background-color: rgba(250, 250, 250, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1.5px solid #111111;
+            border-bottom: 1.5px solid #fafafa;
             position: fixed;
             width: 100%;
             top: 0;
@@ -51,9 +51,9 @@
             height: 76px;
         }
         
-        /* Header Logo using Space Grotesk */
+        /* Header Logo using Inter */
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 15px;
             font-weight: 700;
             letter-spacing: 0.15em;
@@ -69,14 +69,14 @@
             align-items: center;
         }
         
-        /* Contact link with blocky source font and enlarged invisible surrounding hitbox */
+        /* Contact link using Inter */
         .nav-links a {
             text-decoration: none;
             color: #333333;
-            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
-            font-weight: 700;
-            font-size: 11px;
-            letter-spacing: 0.1em;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             padding: 12px 20px;
             border-radius: 4px;
@@ -127,10 +127,10 @@
         .mobile-nav-links a {
             text-decoration: none;
             color: #111111;
-            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             transition: color 0.2s ease;
             display: block;
@@ -190,14 +190,15 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #666666;
-            margin-bottom: 1px;
+            margin-bottom: 8px;
             font-family: 'Inter', sans-serif;
         }
         
         .portfolio-title {
             font-family: 'Inter', sans-serif;
-            font-size: 48px;
-            font-weight: 800;
+            font-size: 53px;
+            font-weight: 600;
+            line-height: 1.05;
             letter-spacing: -0.03em;
             color: #111111;
             margin-bottom: 8px;
@@ -370,7 +371,7 @@
                 <div class="portfolio-header">
                     <div class="portfolio-top-meta">Portfolio &middot; Index</div>
                     <h1 class="portfolio-title">Design Work</h1>
-                    <p class="portfolio-subtitle">Branding, 3D Design, Animation, and Advertising</p>
+
                 </div>
                 
                 <div class="projects-grid">
