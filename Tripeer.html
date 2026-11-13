@@ -213,6 +213,44 @@
         }
 
         /* =========================================================
+           TOP IMAGE SPACES (OBJECT-FIT CONTAIN TO AVOID CROPPING)
+           ========================================================= */
+        .top-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .top-image-slot {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #f0eeeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .top-image-placeholder-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* =========================================================
            INTERACTIVE PROTOTYPE FRAME (PORTFOLIO SHOWCASE)
            ========================================================= */
         .prototype-showcase {
@@ -784,6 +822,9 @@
             .ad-mockup-grid {
                 grid-template-columns: 1fr;
             }
+            .top-image-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -863,7 +904,186 @@
         <section class="project-content">
             <div class="container">
 
-                <!-- INTERACTIVE LIVE FRAME -->
+                <!-- 2 NEW TOP IMAGE SPACES (OBJECT-FIT CONTAIN) -->
+                <div class="top-image-grid">
+                    <div class="top-image-slot">
+                      <img src="images/Tripper/TripeerIndex.jpg" alt="...">
+
+                    </div>
+                    <div class="top-image-slot">
+                      <img src="images/Tripper/TripeerBoard.jpg" alt="...">
+                    </div>
+                </div>
+                
+                <!-- Side-by-Side Editorial Text Block -->
+                <div class="editorial-text-block">
+                    <div class="editorial-headline">
+                        <h3>Destigmatizing Community Discovery</h3>
+                    </div>
+                    <div class="editorial-copy">
+                        <p>Digital platforms in the psychedelic space often fall into two extremes: sterile clinical portals or loud, neon counterculture clichés. Both create friction for everyday explorers looking for local community, shared experiences, and trusted companions.</p>
+                        <p>Tripeer replaces visual noise with a clean, welcoming interface built around real human connection—making it easy to find your tribe, share experiences, and build genuine local community.</p>
+                    </div>
+                </div>
+
+                <!-- Visual System Breakdown Cards -->
+                <div class="system-grid">
+                    <!-- 01 / Color Palette -->
+                    <div class="system-card">
+                        <div class="system-card-header">
+                            <span class="system-card-label">01 / Tactile Pastel Palette</span>
+                        </div>
+                        <div class="swatch-row">
+                            <div class="swatch-item">
+                                <div class="swatch-box" style="background-color: #FAF8F5;"></div>
+                                <span class="swatch-name">Oatmeal</span>
+                                <span class="swatch-hex">#FAF8F5</span>
+                            </div>
+                            <div class="swatch-item">
+                                <div class="swatch-box" style="background-color: #E6ECE8;"></div>
+                                <span class="swatch-name">Muted Sage</span>
+                                <span class="swatch-hex">#E6ECE8</span>
+                            </div>
+                            <div class="swatch-item">
+                                <div class="swatch-box" style="background-color: #ECE8F3;"></div>
+                                <span class="swatch-name">Lavender</span>
+                                <span class="swatch-hex">#ECE8F3</span>
+                            </div>
+                            <div class="swatch-item">
+                                <div class="swatch-box" style="background-color: #F6E8E2;"></div>
+                                <span class="swatch-name">Pale Peach</span>
+                                <span class="swatch-hex">#F6E8E2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 / Typography -->
+                    <div class="system-card">
+                        <div class="system-card-header">
+                            <span class="system-card-label">02 / Editorial Typography Pairing</span>
+                        </div>
+                        <div class="type-specimen-serif">
+                            Cormorant Garamond <em>Italic</em>
+                        </div>
+                        <p class="type-specimen-sans">
+                            Paired with <strong>Plus Jakarta Sans</strong> for directory metadata, modality filtering pills, and accessible UI states against deep forest-charcoal ink (<code>#232B26</code>).
+                        </p>
+                    </div>
+
+                    <!-- 03 / Photography & Art Direction -->
+                    <div class="system-card full-span">
+                        <div class="system-card-header">
+                            <span class="system-card-label">03 / Photography &amp; Art Direction</span>
+                            <span class="system-card-hint">Relatable, photography centered around candid human connection, natural light, and grounded stillness.</span>
+                        </div>
+                        <div class="photo-direction-grid">
+                            <!-- Photo Card 1 -->
+                            <div class="photo-slot-card" style="background: linear-gradient(160deg, #E6ECE8 0%, #FAF8F5 100%);">
+                                <img src="images/Tripper/festdude.jpg" alt="Build Community — Outdoor Festival Gathering">
+                                <div class="photo-slot-top">
+                                    <span class="photo-pill">Pillar 01 &middot; Build Community</span>
+                                </div>
+                                <div class="photo-slot-bottom">
+                                    <div class="photo-slot-caption">
+                                        <span>Find Your Tribe</span>
+                                        <span>35mm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Photo Card 2 -->
+                            <div class="photo-slot-card" style="background: linear-gradient(160deg, #F6E8E2 0%, #FAF8F5 100%);">
+                                <img src="images/Tripper/medi4.jpg" alt="Set & Setting — Quiet Outdoor Reflection">
+                                <div class="photo-slot-top">
+                                    <span class="photo-pill">Pillar 02 &middot; Set &amp; Setting</span>
+                                </div>
+                                <div class="photo-slot-bottom">
+                                    <div class="photo-slot-caption">
+                                        <span>Grounded Stillness</span>
+                                        <span>50mm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Photo Card 3 -->
+                            <div class="photo-slot-card" style="background: linear-gradient(160deg, #ECE8F3 0%, #FAF8F5 100%);">
+                                <img src="images/Tripper/trumpet.jpg" alt="Experience Life — Live Acoustic Music">
+                                <div class="photo-slot-top">
+                                    <span class="photo-pill">Pillar 03 &middot; Experience Life</span>
+                                </div>
+                                <div class="photo-slot-bottom">
+                                    <div class="photo-slot-caption">
+                                        <span>Shared Sound &amp; Presence</span>
+                                        <span>35mm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 04 / Paid Social & Brand Campaign Mockups -->
+                    <div class="system-card full-span">
+                        <div class="system-card-header">
+                            <span class="system-card-label">04 / Campaign &amp; Paid Social</span>
+                            <span class="system-card-hint">Regional launch creative &middot; Pacific Northwest</span>
+                        </div>
+                        <div class="ad-mockup-grid">
+                            <!-- Mock Ad 1: Editorial Feed Card -->
+                            <div class="ad-stage">
+                                <div class="tripper-ad-feed">
+                                    <div class="ad-feed-header">
+                                        <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top: 0.22em;">e</span>r.</span>
+                                        <span class="ad-tag">Seattle &amp; Portland</span>
+                                    </div>
+                                    <div class="ad-image-well">
+                                        <img src="images/Tripper/Dudew.jpg" alt="Tripeer Regional Launch Ad">
+                                    </div>
+                                    <div>
+                                        <div class="ad-feed-headline">
+                                            Find your local circle for <em>conscious</em> exploration.
+                                        </div>
+                                        <div class="ad-feed-footer">
+                                            <span style="color:#5C6660;">Peer-vetted &middot; Local gatherings</span>
+                                            <span class="ad-cta-pill">Request Invite</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ad-stage-meta">
+                                    <span>Instagram Feed &middot; 4:5</span>
+                                    <span>Editorial Card Layout</span>
+                                </div>
+                            </div>
+
+                            <!-- Mock Ad 2: Arch Botanical Poster Ad -->
+                            <div class="ad-stage">
+                                <div class="tripper-ad-editorial">
+                                    <div class="ad-feed-header">
+                                        <span class="ad-tag" style="background:#ECE8F3;">Entheogenic Exploration</span>
+                                        <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.22em;">e</span>r.</span>
+                                    </div>
+                                    <div class="ad-arch-frame">
+                                        <img src="images/Tripper/relax.jpg" alt="Tripeer Botanical Campaign Poster">
+                                    </div>
+                                    <div>
+                                        <div class="ad-feed-headline">
+                                            Shared curiosity, <em>grounded</em> in community.
+                                        </div>
+                                        <div class="ad-feed-footer">
+                                            <span style="color:#5C6660;">tripeer.com</span>
+                                            <span class="ad-cta-pill">Explore Directory</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ad-stage-meta">
+                                    <span>Paid Social &middot; 4:5</span>
+                                    <span>Arch Frame</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTERACTIVE LIVE FRAME (MOVED TO BOTTOM) -->
                 <div class="prototype-showcase">
                     <div class="browser-window">
                         <div class="browser-toolbar">
@@ -1547,174 +1767,6 @@
                     </div>
                 </div>
                 
-                <!-- Side-by-Side Editorial Text Block -->
-                <div class="editorial-text-block">
-                    <div class="editorial-headline">
-                        <h3>Destigmatizing Community Discovery</h3>
-                    </div>
-                    <div class="editorial-copy">
-                        <p>Digital platforms in the psychedelic space often fall into two extremes: sterile clinical portals or loud, neon counterculture clichés. Both create friction for everyday explorers looking for local community, shared experiences, and trusted companions.</p>
-                        <p>Tripeer replaces visual noise with a clean, welcoming interface built around real human connection—making it easy to find your tribe, share experiences, and build genuine local community.</p>
-                    </div>
-                </div>
-
-                <!-- Visual System Breakdown Cards -->
-                <div class="system-grid">
-                    <!-- 01 / Color Palette -->
-                    <div class="system-card">
-                        <div class="system-card-header">
-                            <span class="system-card-label">01 / Tactile Pastel Palette</span>
-                        </div>
-                        <div class="swatch-row">
-                            <div class="swatch-item">
-                                <div class="swatch-box" style="background-color: #FAF8F5;"></div>
-                                <span class="swatch-name">Oatmeal</span>
-                                <span class="swatch-hex">#FAF8F5</span>
-                            </div>
-                            <div class="swatch-item">
-                                <div class="swatch-box" style="background-color: #E6ECE8;"></div>
-                                <span class="swatch-name">Muted Sage</span>
-                                <span class="swatch-hex">#E6ECE8</span>
-                            </div>
-                            <div class="swatch-item">
-                                <div class="swatch-box" style="background-color: #ECE8F3;"></div>
-                                <span class="swatch-name">Lavender</span>
-                                <span class="swatch-hex">#ECE8F3</span>
-                            </div>
-                            <div class="swatch-item">
-                                <div class="swatch-box" style="background-color: #F6E8E2;"></div>
-                                <span class="swatch-name">Pale Peach</span>
-                                <span class="swatch-hex">#F6E8E2</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 02 / Typography -->
-                    <div class="system-card">
-                        <div class="system-card-header">
-                            <span class="system-card-label">02 / Editorial Typography Pairing</span>
-                        </div>
-                        <div class="type-specimen-serif">
-                            Cormorant Garamond <em>Italic</em>
-                        </div>
-                        <p class="type-specimen-sans">
-                            Paired with <strong>Plus Jakarta Sans</strong> for directory metadata, modality filtering pills, and accessible UI states against deep forest-charcoal ink (<code>#232B26</code>).
-                        </p>
-                    </div>
-
-                    <!-- 03 / Photography & Art Direction -->
-                    <div class="system-card full-span">
-                        <div class="system-card-header">
-                            <span class="system-card-label">03 / Photography &amp; Art Direction</span>
-                            <span class="system-card-hint">Relatable, photography centered around candid human connection, natural light, and grounded stillness.</span>
-                        </div>
-                        <div class="photo-direction-grid">
-                            <!-- Photo Card 1 -->
-                            <div class="photo-slot-card" style="background: linear-gradient(160deg, #E6ECE8 0%, #FAF8F5 100%);">
-                                <img src="images/Tripper/festdude.jpg" alt="Build Community — Outdoor Festival Gathering">
-                                <div class="photo-slot-top">
-                                    <span class="photo-pill">Pillar 01 &middot; Build Community</span>
-                                </div>
-                                <div class="photo-slot-bottom">
-                                    <div class="photo-slot-caption">
-                                        <span>Find Your Tribe</span>
-                                        <span>35mm</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Photo Card 2 -->
-                            <div class="photo-slot-card" style="background: linear-gradient(160deg, #F6E8E2 0%, #FAF8F5 100%);">
-                                <img src="images/Tripper/medi4.jpg" alt="Set & Setting — Quiet Outdoor Reflection">
-                                <div class="photo-slot-top">
-                                    <span class="photo-pill">Pillar 02 &middot; Set &amp; Setting</span>
-                                </div>
-                                <div class="photo-slot-bottom">
-                                    <div class="photo-slot-caption">
-                                        <span>Grounded Stillness</span>
-                                        <span>50mm</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Photo Card 3 -->
-                            <div class="photo-slot-card" style="background: linear-gradient(160deg, #ECE8F3 0%, #FAF8F5 100%);">
-                                <img src="images/Tripper/trumpet.jpg" alt="Experience Life — Live Acoustic Music">
-                                <div class="photo-slot-top">
-                                    <span class="photo-pill">Pillar 03 &middot; Experience Life</span>
-                                </div>
-                                <div class="photo-slot-bottom">
-                                    <div class="photo-slot-caption">
-                                        <span>Shared Sound &amp; Presence</span>
-                                        <span>35mm</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 04 / Paid Social & Brand Campaign Mockups -->
-                    <div class="system-card full-span">
-                        <div class="system-card-header">
-                            <span class="system-card-label">04 / Campaign &amp; Paid Social</span>
-                            <span class="system-card-hint">Regional launch creative &middot; Pacific Northwest</span>
-                        </div>
-                        <div class="ad-mockup-grid">
-                            <!-- Mock Ad 1: Editorial Feed Card -->
-                            <div class="ad-stage">
-                                <div class="tripper-ad-feed">
-                                    <div class="ad-feed-header">
-                                        <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top: 0.22em;">e</span>r.</span>
-                                        <span class="ad-tag">Seattle &amp; Portland</span>
-                                    </div>
-                                    <div class="ad-image-well">
-                                        <img src="images/Tripper/Dudew.jpg" alt="Tripeer Regional Launch Ad">
-                                    </div>
-                                    <div>
-                                        <div class="ad-feed-headline">
-                                            Find your local circle for <em>conscious</em> exploration.
-                                        </div>
-                                        <div class="ad-feed-footer">
-                                            <span style="color:#5C6660;">Peer-vetted &middot; Local gatherings</span>
-                                            <span class="ad-cta-pill">Request Invite</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ad-stage-meta">
-                                    <span>Instagram Feed &middot; 4:5</span>
-                                    <span>Editorial Card Layout</span>
-                                </div>
-                            </div>
-
-                            <!-- Mock Ad 2: Arch Botanical Poster Ad -->
-                            <div class="ad-stage">
-                                <div class="tripper-ad-editorial">
-                                    <div class="ad-feed-header">
-                                        <span class="ad-tag" style="background:#ECE8F3;">Entheogenic Exploration</span>
-                                        <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.22em;">e</span>r.</span>
-                                    </div>
-                                    <div class="ad-arch-frame">
-                                        <img src="images/Tripper/relax.jpg" alt="Tripeer Botanical Campaign Poster">
-                                    </div>
-                                    <div>
-                                        <div class="ad-feed-headline">
-                                            Shared curiosity, <em>grounded</em> in community.
-                                        </div>
-                                        <div class="ad-feed-footer">
-                                            <span style="color:#5C6660;">tripeer.com</span>
-                                            <span class="ad-cta-pill">Explore Directory</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ad-stage-meta">
-                                    <span>Paid Social &middot; 4:5</span>
-                                    <span>Arch Frame</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="next-prev">
                     <a href="amaz.html" class="prev-project">← Previous project</a>
                     <a href="FF.html" class="next-project">Next project →</a>
