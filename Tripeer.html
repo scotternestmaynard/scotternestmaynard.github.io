@@ -608,6 +608,21 @@
             align-items: center;
         }
 
+        .ad-brand-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .ad-logo-slot {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            object-fit: cover;
+            display: block;
+            flex-shrink: 0;
+        }
+
         .ad-brand-mark {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 22px;
@@ -907,11 +922,11 @@
                 <!-- 2 NEW TOP IMAGE SPACES (OBJECT-FIT CONTAIN) -->
                 <div class="top-image-grid">
                     <div class="top-image-slot">
-                      <img src="images/TripeerIndex.jpg" alt="tripeerlogo">
+                      <img src="images/Tripper/TripeerIndex.jpg" alt="...">
 
                     </div>
                     <div class="top-image-slot">
-                      <img src="images/TripeerBoard.jpg" alt="boardintro">
+                      <img src="images/Tripper/TripeerBoard.jpg" alt="...">
                     </div>
                 </div>
                 
@@ -1032,7 +1047,10 @@
                             <div class="ad-stage">
                                 <div class="tripper-ad-feed">
                                     <div class="ad-feed-header">
-                                        <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top: 0.22em;">e</span>r.</span>
+                                        <div class="ad-brand-group">
+                                            <img src="images/Tripper/TLogo40xblack.png" alt="Tripeer Logo" class="ad-logo-slot">
+                                            <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.22em;">e</span>r.</span>
+                                        </div>
                                         <span class="ad-tag">Seattle &amp; Portland</span>
                                     </div>
                                     <div class="ad-image-well">
@@ -1059,7 +1077,10 @@
                                 <div class="tripper-ad-editorial">
                                     <div class="ad-feed-header">
                                         <span class="ad-tag" style="background:#ECE8F3;">Entheogenic Exploration</span>
-                                        <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.22em;">e</span>r.</span>
+                                        <div class="ad-brand-group">
+                                            <img src="images/Tripper/TLogo40xblack.png" alt="Tripeer Logo" class="ad-logo-slot">
+                                            <span class="ad-brand-mark">Tripe<span style="display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.22em;">e</span>r.</span>
+                                        </div>
                                     </div>
                                     <div class="ad-arch-frame">
                                         <img src="images/Tripper/relax.jpg" alt="Tripeer Botanical Campaign Poster">
@@ -1139,6 +1160,8 @@
     padding: 16px 5%;
     display: flex; justify-content: space-between; align-items: center;
   }
+  .brand-group { display: inline-flex; align-items: center; gap: 4px; }
+  .brand-logo-slot { width: 22px; height: 22px; border-radius: 5px; object-fit: cover; display: block; flex-shrink: 0; }
   .brand { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
   .nav-actions { display: flex; gap: 16px; align-items: center; font-size: 13px; }
   .nav-actions a { text-decoration: none; color: var(--muted); }
@@ -1246,6 +1269,17 @@
     letter-spacing: -0.02em;
   }
   .hero h1 em { font-style: italic; font-weight: 400; }
+  
+  /* Desktop line break by default, hidden/inline on mobile */
+  .hero-desktop-break {
+    display: inline;
+  }
+  @media (max-width: 640px) {
+    .hero-desktop-break {
+      display: none;
+    }
+  }
+
   .hero p { max-width: 540px; margin: 0 auto 30px; color: var(--muted); font-size: 15px; }
   .section { padding: 56px 6%; max-width: 1120px; margin: 0 auto; }
   .section-head {
@@ -1273,6 +1307,27 @@
     transition: transform 0.2s ease;
   }
   .card:hover { transform: translateY(-3px); }
+  .card-more {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px dashed rgba(35, 43, 38, 0.22);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 240px;
+    cursor: pointer;
+  }
+  .card-more:hover {
+    background: #fff;
+    border-style: solid;
+  }
+  .more-dots {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
   .avatar {
     width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
     justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 20px;
@@ -1289,6 +1344,19 @@
     background: #fff; border: 1px solid var(--border); border-radius: 16px;
     padding: 18px 22px; display: flex; flex-wrap: wrap; justify-content: space-between;
     align-items: center; gap: 12px; margin-bottom: 12px;
+  }
+  .gathering-more {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px dashed rgba(35, 43, 38, 0.22);
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .gathering-more:hover {
+    background: #fff;
+    border-style: solid;
+    transform: translateY(-2px);
   }
   
   /* Full-width Dropdown / Accordion Sections */
@@ -1391,6 +1459,20 @@
     line-height: 1.6;
     margin-bottom: 16px;
   }
+  .footer-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .footer-logo-slot {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+  }
   .footer-links {
     list-style: none;
     display: flex;
@@ -1465,10 +1547,13 @@
 </head>
 <body>
   <nav>
-    <div class='brand'>Tripe<span style='display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:6.0px;'>e</span>r.</div>
+    <div class='brand-group'>
+      <img src='images/Tripper/TLogo40xblack.png' alt='Tripeer Logo' class='brand-logo-slot'>
+      <div class='brand'>Tripe<span style='display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:6.0px;'>e</span>r.</div>
+    </div>
     <div class='nav-actions'>
-      <a href='#directory' class='desktop-nav-link'>Directory</a>
-      <a href='#circles' class='desktop-nav-link'>Circles</a>
+      <a href='#directory' onclick='document.getElementById(&quot;directory&quot;).scrollIntoView({behavior:&quot;smooth&quot;}); return false;'>Directory</a>
+      <a href='#circles' onclick='document.getElementById(&quot;circles&quot;).scrollIntoView({behavior:&quot;smooth&quot;}); return false;'>Events</a>
       <button class='btn desktop-nav-link' onclick='openInvite()'>Request Invite</button>
       <button class='sandbox-menu-btn' onclick='toggleSandboxMenu()' aria-label='Open Navigation'>☰</button>
     </div>
@@ -1491,7 +1576,7 @@
 
   <section class='hero'>
     <span class='pill-badge'>Peer-Vetted &middot; Community Connections</span>
-    <h1>Find kindred minds for<br> <em>conscious</em> exploration.</h1>
+    <h1>Find kindred minds for<span class='hero-desktop-break'><br></span> <em>conscious</em> exploration.</h1>
     <p>A calm, private sanctuary to connect with verified local psychonauts, integration circles, and trip companions.</p>
     <div style='display:flex; gap:12px; justify-content:center; flex-wrap:wrap;'>
       <button class='btn' onclick='document.getElementById(&quot;directory&quot;).scrollIntoView({behavior:&quot;smooth&quot;})'>Explore Community</button>
@@ -1543,6 +1628,12 @@
         <div style='font-size:12px; color:var(--muted);'>Portland, OR &middot; Microdose &amp; Mindfulness &middot; 4 spots left</div>
       </div>
       <button class='btn-outline' onclick='toggleRsvp(this)'>Reserve Spot</button>
+    </div>
+    <div class='gathering-row gathering-more' onclick='openInvite()'>
+      <div style='display:flex; flex-direction:column; align-items:center; gap:2px;'>
+        <span style='font-family:&quot;Cormorant Garamond&quot;, serif; font-size:28px; line-height:0.8; letter-spacing:0.16em; color:var(--ink);'>&bull;&bull;&bull;</span>
+        <span style='font-size:12px; color:var(--muted);'>14 more private regional circles &amp; gatherings &middot; Members only</span>
+      </div>
     </div>
   </section>
 
@@ -1602,7 +1693,10 @@
   <footer class='sandbox-footer'>
     <div class='footer-grid'>
       <div class='footer-col'>
-        <h4 style='font-family:&quot;Cormorant Garamond&quot;, serif; font-size:22px; margin-bottom:10px;'>Tripe<span style='display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.22em;'>e</span>r.</h4>
+        <div class='footer-brand-row'>
+          <img src='images/Tripper/TLogo40xwhite.png' alt='Tripeer Logo' class='footer-logo-slot'>
+          <h4 style='font-family:&quot;Cormorant Garamond&quot;, serif; font-size:22px; margin-bottom:0;'>Tripe<span style='display:inline-block; transform:scale(-1,-1); vertical-align:baseline; position:relative; top:0.24em;'>e</span>r.</h4>
+        </div>
         <p>A private community network built for peer-vetted connections, intentional integration, and harm-reduction education.</p>
         <div style='font-size:11px; color:#27c93f; display:flex; align-items:center; gap:6px;'>
           <span style='width:6px; height:6px; border-radius:50%; background:#27c93f; display:inline-block;'></span>
@@ -1683,7 +1777,7 @@
     { name: 'Aria Sterling', city: 'Austin, TX', age: 28, verifiedDate: 'May 30, 2024', modalities: ['Macrodose', 'Psychonaut', 'Festival Companion'], bio: 'Deep explorer focused on high-dose ceremonial work and profound introspection.', bg: '#F6E8E2', initials: 'AS' },
     { name: 'Jaxson Reed', city: 'Los Angeles, CA', age: 27, verifiedDate: 'July 12, 2024', modalities: ['Festival Companion'], bio: 'Mindful art-car crew member looking for conscious campmates and good frequencies.', bg: '#E6ECE8', initials: 'JR' },
     { name: 'Dr. Naomi Thorne', city: 'Vancouver, BC', age: 42, verifiedDate: 'October 03, 2023', modalities: ['Knowledge Share', 'Plant Medicine'], bio: 'Ethnobotanist researching historical alkaloids and harm reduction frameworks.', bg: '#ECE8F3', initials: 'NT' },
-    { name: 'Mateo Silva', city: 'Oaxaca, Mexico', age: 35, verifiedDate: 'April 18, 2024', modalities: ['Plant Medicine'], bio: 'Traditional lineage advocate bridging ancient traditions with modern integration.', bg: '#F6E8E2', initials: 'MS' },
+    { name: 'Mateo Silva', city: 'Oaxaca, Mexico', age: 35, verifiedDate: 'April 18, 2024', modalities: ['Plant Medicine'], bio: 'Traditional lineage advocate bridging ancient traditions with modern integration.', bg: '#F6E8F2', initials: 'MS' },
     { name: 'Nyx Holloway', city: 'Seattle, WA', age: 33, verifiedDate: 'December 09, 2023', modalities: ['Psychonaut', 'Microdosing'], bio: 'Cartographer of consciousness, lucid dreaming, and altered state philosophy.', bg: '#E6ECE8', initials: 'NH' }
   ];
   let activeFilter = 'All';
@@ -1695,7 +1789,7 @@
       (activeFilter === 'All' || m.modalities.includes(activeFilter)) &&
       (m.name.toLowerCase().includes(q) || m.city.toLowerCase().includes(q) || m.modalities.some(mod => mod.toLowerCase().includes(q)))
     );
-    grid.innerHTML = filtered.map(m => `
+    const cardsHtml = filtered.map(m => `
       <div class='card'>
         <div>
           <div class='avatar' style='background:${m.bg};'>${m.initials}</div>
@@ -1710,12 +1804,25 @@
         <button class='btn-outline' style='width:100%;' onclick='openHello(&quot;${m.name}&quot;)'>Say Hello</button>
       </div>
     `).join('');
+
+    const moreCardHtml = `
+      <div class='card card-more' onclick='openInvite()'>
+        <div>
+          <div class='more-dots'>&bull;&bull;&bull;</div>
+          <div style='font-weight:600; font-size:14px; margin-bottom:4px;'>240+ Verified Explorers</div>
+          <p style='font-size:12px; color:var(--muted); max-width:200px; margin:0 auto 18px;'>Full member directory is hidden to protect member privacy.</p>
+        </div>
+        <button class='btn-outline' style='width:100%;'>Request Access</button>
+      </div>
+    `;
+
+    grid.innerHTML = cardsHtml + moreCardHtml;
   }
 
   document.querySelectorAll('.filter-chip').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    btn.classList.add('active');
       activeFilter = btn.dataset.filter;
       renderCards();
     });
