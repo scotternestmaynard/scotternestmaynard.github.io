@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Scott's Portfolio</title>
+    
+    <!-- Modern Swiss Editorial Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Flexbox sticky footer wrapper setup */
+        html, body {
+            height: 100%;
+        }
+        
+        body {
+            background-color: #fafafa;
+            color: #111111;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Sticky Header with Background-Matched Separation */
+        header {
+            background-color: rgba(250, 250, 250, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1.5px solid #fafafa;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 76px;
+        }
+        
+        /* Header Logo using Inter */
+        .logo {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            color: #111111;
+            text-transform: uppercase;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        /* Navigation links using Inter */
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            border-radius: 4px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover {
+            color: #000000;
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #111111;
+            z-index: 1001;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 80px 30px 30px;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 24px;
+        }
+        
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: #111111;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+            display: block;
+            padding: 8px 0;
+        }
+        
+        .mobile-nav-links a:hover {
+            color: #0066ff;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #111111;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Project Hero - Background matched to #fafafa with light grey bottom border divider */
+        .project-hero {
+            padding: 110px 0 24px;
+            background-color: #fafafa;
+            color: #111111;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 53px;
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            color: #111111;
+        }
+        
+        .project-meta {
+            display: flex;
+            margin-bottom: 16px;
+            gap: 40px;
+        }
+        
+        .project-meta h4 {
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666666;
+            margin-bottom: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .project-meta p {
+            font-size: 14px;
+            color: #333333;
+            font-weight: 500;
+        }
+
+        .project-meta p a {
+            color: #111111;
+            text-decoration: none;
+            border-bottom: 1px solid #111111;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-meta p a:hover {
+            color: #0066ff;
+            border-color: #0066ff;
+        }
+        
+        /* Project Content - Flex grow fills remaining vertical space */
+        main {
+            flex: 1 0 auto;
+        }
+
+        .project-content {
+            padding: 80px 0;
+        }
+        
+        /* Pro Redesigned Side-by-Side Image and Editorial Text Lockup */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* Static width + auto height preserves the full graphic poster without cropping */
+        .contact-img-container img {
+            width: 380px;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        .contact-text-container {
+            max-width: 500px;
+        }
+
+        /* Editorial Hierarchy Enhancements */
+        .editorial-kicker {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+
+        .editorial-headline h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            color: #111111;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .editorial-copy p {
+            font-size: 15px;
+            color: #444444;
+            line-height: 1.7;
+            font-weight: 400;
+            margin-bottom: 18px;
+        }
+
+        .editorial-copy p.lead {
+            font-size: 17px;
+            font-weight: 500;
+            color: #111111;
+            letter-spacing: -0.01em;
+        }
+
+        /* Supplementary Tiny Text / Metadata Micro-Lockup */
+        .editorial-meta-lockup {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #777777;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .editorial-meta-lockup .status-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .editorial-meta-lockup .edition-tag {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            color: #333333;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111111;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            flex-shrink: 0;
+        }
+        
+        .copyright {
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 10px;
+            color: #888888;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .copyright a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .copyright a:hover {
+            color: #d3f600;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 32px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-img-container img {
+                width: 100%;
+                max-width: 380px;
+                height: auto;
+            }
+
+            /* Constrains text container to match the image width and keeps everything neat and tight */
+            .contact-text-container {
+                width: 100%;
+                max-width: 380px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 13px;
+                letter-spacing: 0.1em;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">SCOTT MAYNARD</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close" aria-label="Close Menu">✕</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="mobile-menu-overlay"></div>
+    
+    <main>
+        <section class="project-hero">
+            <div class="container">
+                <h1 class="project-title">Scott E. Maynard</h1>
+                <div class="project-meta">
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:thescottmaynard@gmail.com">thescottmaynard@gmail.com</a></p>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>425.837.2102</p>
+                    </div>
+                    <div>
+                        <h4>Resume</h4>
+                        <p><a href="images/Scott_Maynard_Resume.pdf" target="_blank">View Resume →</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="project-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-img-container">
+                        <img src="images/scott1.jpg" alt="Scott Maynard" class="project-img">
+                    </div>
+                    <div class="contact-text-container">
+                        <div class="editorial-kicker">About / Availability</div>
+                        <div class="editorial-headline">
+                            <h3>Let's build something exceptional together.</h3>
+                        </div>
+                        <div class="editorial-copy">
+                            <p class="lead">Currently based in Bothell, near Seattle and Bellevue, with openness to strategic relocation.</p>
+                            
+                            <p>I'm always interested in connecting with amazing teams, design leaders, and engineering groups tackling complex challenges. Drop a line if you have an opportunity or want to collaborate.</p>
+                        </div>
+                        
+                        <!-- Supplementary Micro-Metadata Lockup -->
+                        <div class="editorial-meta-lockup">
+                            <div><span class="status-dot"></span>Open for Opportunities</div>
+                            <div class="edition-tag">// 2026 EDITION</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="copyright">
+                <a href="mailto:thescottmaynard@gmail.com">thescottmaynard@gmail.com</a><br>
+                425.837.2102
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+            
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close mobile menu
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            mobileMenuClose.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking on a link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
+    </script>
+</body>
+</html>
